@@ -16,6 +16,7 @@ const MainContainer = () => {
       .then((data) => setArticlesList(data.response.results));
   };
   console.log(articlesList);
+
   return (
     <>
       <h2> hello from the main container</h2>

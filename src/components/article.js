@@ -1,7 +1,11 @@
 import React from "react";
 
-const Article = () => {
-  return <h4> hello from the article</h4>;
+const Article = ({article, onArticleClick}) => {
+
+    const handleClick = () => {
+        onArticleClick(article)
+    }
+  return <li onClick={handleClick}> {article.sectionName}</li>;
 };
 
 export default Article;

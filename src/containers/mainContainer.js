@@ -19,15 +19,18 @@ const MainContainer = () => {
   console.log(articlesList);
 
   const onArticleClick = (article) => {
+    console.log(article);
     setSelectedArticle(article);
-  }
+  };
 
   return (
     <>
       <h2> hello from the main container</h2>
-      <ListOfArticles articlesList={articlesList} onArticleClick={onArticleClick}/>
-      {/* {selectedArticle ? <Article selectedArticle={selectedArticle}/> : null} */}
-      {/* <Article /> */}
+      <ListOfArticles
+        articlesList={articlesList}
+        onArticleClick={onArticleClick}
+      />
+      {selectedArticle && <Article article={selectedArticle} />}
     </>
   );
 };

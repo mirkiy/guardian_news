@@ -35,7 +35,7 @@ return article.sectionName.toLowerCase().indexOf(lowerSearch) > -1;
 
   return (
     <>
-      <h2> hello from the main container</h2>
+      <h2>The Guardian News Headlines</h2>
       <Filter handleChange={filter} />
       <ListOfArticles
         articlesList={articlesList}

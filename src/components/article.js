@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Article = ({ article, onArticleClick }) => {
-  if (!article || !article.sectionName) {
-    return <li>No article available</li>;
-  }
+  const [selected, setSelected] = useState(false);
 
   const handleClick = () => {
-    onArticleClick(article);
+    setSelected(!selected);
+    if (!selected) {
+      onArticleClick(article);
+    } else {
+      onArticleClick(null);
+    }
   };
 
-  return <li onClick={handleClick}> {article.sectionName}</li>;
+  return (
+    <div>
+      <ul onClick={handleClick}>
+        {article.sectionName}
+        {selected && <li>{article.webTitle} {article.webPublicationDate} {article.webUrl}</li>}
+      </ul>
+    </div>
+  );
 };
 
 export default Article;
+

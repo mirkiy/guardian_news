@@ -30,7 +30,8 @@ const Article = ({ article, onArticleClick }) => {
             <span>{article.webTitle}</span>
             <span> {formattedDate}</span>
             <li>
-              <a href="">{article.webUrl}</a>
+              <a href=
+              {article.webUrl}  target="_blank">{article.webUrl}</a>
             </li>
           </>
         )}

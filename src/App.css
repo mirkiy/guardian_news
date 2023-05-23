@@ -38,4 +38,5 @@ color: rgb(136, 136, 189);
 }
 .articleLi, .titleLi, .dateLi {
 	list-style: none;
+	padding-left: 15px;
 }

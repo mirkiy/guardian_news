@@ -27,8 +27,8 @@ const Article = ({ article, onArticleClick }) => {
         {selected && (
           <>
             {" "}
-            <span>{article.webTitle}</span>
-            <span> {formattedDate}</span>
+            <li className="titleLi">{article.webTitle}</li>
+            <li className="dateLi"> {formattedDate}</li>
             <li className="articleLi">
               <a href=
               {article.webUrl}  target="_blank">{article.webUrl}</a>

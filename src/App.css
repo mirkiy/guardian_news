@@ -3,10 +3,12 @@ form input {
 	margin: 0 auto;
 	padding: 10px;
 	display: block;
+	border: #cab6a8;
+	border-radius: 5px;
 }
 
 form input:focus {
-	outline: 1px solid #ff6600;
+	outline: 1px solid #d3d0ce;
 }
 
 a, a:link, a:visited {
@@ -34,6 +36,6 @@ font-family: 'Oswald', sans-serif;
 cursor: pointer;
 color: rgb(136, 136, 189);
 }
-.articleLi {
+.articleLi, .titleLi, .dateLi {
 	list-style: none;
 }

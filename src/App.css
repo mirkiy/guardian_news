@@ -28,6 +28,7 @@ margin: 0 auto;
 width: 70%;
 background-color: aquamarine;
 padding: 15px;
+font-family: 'Oswald', sans-serif;
 }
 .articleObject:hover {
 cursor: pointer;

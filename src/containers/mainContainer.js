@@ -41,7 +41,7 @@ const MainContainer = () => {
   };
 
   return (
-    <>
+    <div className="main">
       <h2>The Guardian News Headlines</h2>
       <Filter handleChange={filter} />
       <ListOfArticles
@@ -49,7 +49,7 @@ const MainContainer = () => {
         onArticleClick={onArticleClick}
       />
       {selectedArticle && <Article article={selectedArticle} onArticleClick={onArticleClick} />}
-    </>
+    </div>
   );
 };
 

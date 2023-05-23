@@ -9,7 +9,7 @@ const ListOfArticles = ({ filteredArticle, onArticleClick }) => {
   });
 
   return (
-    <div>
+    <div className="listOfArticles">
       <h3>All Sections:</h3>
 
       <ul>{list}</ul>

@@ -14,7 +14,25 @@ a, a:link, a:visited {
 	color: #000;
 	text-decoration: none;
 }
-/* 
-a:hover, a:active, a:focus {
 
-} */
+a:hover{
+cursor: pointer;
+color: #ff6600;
+}
+h2, h3 {
+	text-align: center;
+}
+.main {
+display: block;
+margin: 0 auto;
+width: 70%;
+background-color: aquamarine;
+padding: 15px;
+}
+.articleObject:hover {
+cursor: pointer;
+color: rgb(136, 136, 189);
+}
+.articleLi {
+	list-style: none;
+}

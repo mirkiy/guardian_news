@@ -22,14 +22,14 @@ const Article = ({ article, onArticleClick }) => {
 
   return (
     <div>
-      <ul onClick={handleClick}>
+      <ul className="articleObject" onClick={handleClick}>
         {article.sectionName}
         {selected && (
           <>
             {" "}
             <span>{article.webTitle}</span>
             <span> {formattedDate}</span>
-            <li>
+            <li className="articleLi">
               <a href=
               {article.webUrl}  target="_blank">{article.webUrl}</a>
             </li>

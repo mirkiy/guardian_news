@@ -48,7 +48,7 @@ const MainContainer = () => {
         filteredArticle={filteredArticle}
         onArticleClick={onArticleClick}
       />
-      {selectedArticle && <Article article={selectedArticle} />}
+      {selectedArticle && <Article article={selectedArticle} onArticleClick={onArticleClick} />}
     </>
   );
 };

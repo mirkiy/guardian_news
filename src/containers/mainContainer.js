@@ -6,41 +6,47 @@ import Filter from "../components/filter";
 const MainContainer = () => {
   const [articlesList, setArticlesList] = useState([]);
   const [selectedArticle, setSelectedArticle] = useState(null);
-  const [filteredArticle, setFilteredArticle] = useState([])
+  const [filteredArticle, setFilteredArticle] = useState([]);
+  const [sectionNames, setSectionNames] = useState([]);
 
   useEffect(() => {
     getArticles();
   }, []);
+
   const getArticles = () => {
     fetch(
       "https://content.guardianapis.com/search?q=brexit&format=json&api-key=test"
     )
       .then((response) => response.json())
-      .then((data) => setArticlesList(data.response.results));
+      .then((data) => {
+        const results = data.response.results;
+        setArticlesList(results);
+        const names = results.map((article) => article.sectionName);
+        const uniqueNames = [...new Set(names)];
+        setSectionNames(uniqueNames);
+        setFilteredArticle(results);
+      });
   };
-  console.log(articlesList);
 
   const onArticleClick = (article) => {
-    console.log(article);
     setSelectedArticle(article);
   };
 
   const filter = (searchTerm) => {
-const lowerSearch = searchTerm.toLowerCase();
-const filteredArticle = articlesList.filter((article) => {
-return article.sectionName.toLowerCase().indexOf(lowerSearch) > -1;
- })
- setFilteredArticle(filteredArticle)
-  }
+    const lowerSearch = searchTerm.toLowerCase();
+    const filteredArticle = articlesList.filter((article) => {
+      return article.sectionName.toLowerCase().indexOf(lowerSearch) > -1;
+    });
+    setFilteredArticle(filteredArticle);
+  };
 
   return (
     <>
       <h2>The Guardian News Headlines</h2>
       <Filter handleChange={filter} />
       <ListOfArticles
-        articlesList={articlesList}
+        filteredArticle={filteredArticle}
         onArticleClick={onArticleClick}
-        filteredArticle = {filteredArticle}
       />
       {selectedArticle && <Article article={selectedArticle} />}
     </>

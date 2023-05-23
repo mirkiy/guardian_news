@@ -13,7 +13,7 @@ form input:focus {
 
 a, a:link, a:visited {
 	font-size: 16px;
-	color: #000;
+	color: rgb(212, 233, 182);
 	text-decoration: none;
 }
 
@@ -28,9 +28,11 @@ h2, h3 {
 display: block;
 margin: 0 auto;
 width: 70%;
-background-color: aquamarine;
+background-color: rgb(23, 107, 79);
 padding: 15px;
 font-family: 'Oswald', sans-serif;
+color: white;
+border-radius: 5px;
 }
 .articleObject:hover {
 cursor: pointer;
